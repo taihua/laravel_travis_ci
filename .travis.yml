@@ -5,7 +5,7 @@ php:
   
 before_script: 
   - composer install --dev --no-interaction --prefer-source
-  - cp ./.env.example ./.env
+  - touch ./.env
   - touch ./database/database_testing.sqlite
   - php artisan migrate --database=sqlite_testing --no-interaction
   
