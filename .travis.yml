@@ -2,11 +2,14 @@ language: php
 php:
   - 5.6
   - 7.1
-  
-before_script: 
+
+before_script:
+  - travis_retry composer require --dev --no-update squizlabs/php_codesniffer
   - composer install --dev --no-interaction --prefer-source
   - touch ./.env
   - touch ./database/database_testing.sqlite
   - php artisan migrate --database=sqlite_testing --no-interaction
-  
-script: phpunit --configuration phpunit.xml --coverage-text
+
+script:
+  - vendor/bin/phpcs src --standard=psr2 -spn
+  - phpunit --configuration phpunit.xml --coverage-text
