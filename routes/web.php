@@ -16,9 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/post',function(){
-    return view('post');
-});
+Route::get('/post','PostController@index');
 
 Auth::routes();
 
