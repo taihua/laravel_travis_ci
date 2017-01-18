@@ -24,7 +24,7 @@ class PostTest extends TestCase
     public function test_post_index()
     {
         $this->visit('/post')
-             ->see('comment');
+             ->see('留言板');
     }
 
     public function test_post_index_on_one_row()
