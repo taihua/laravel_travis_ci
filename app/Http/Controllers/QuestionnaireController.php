@@ -8,7 +8,7 @@ class QuestionnaireController extends Controller
 {
     //
 
-    function index()
+    public function index()
     {
         return view('questionnaire/index');
     }
